@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Mapping\" />
+    <None Remove="QueryHandler\" />
+    <None Remove="Query\" />
+    <None Remove="Query\Product\" />
+    <None Remove="QueryHandler\Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+    <Folder Include="QueryHandler\" />
+    <Folder Include="Query\" />
+    <Folder Include="Query\Product\" />
+    <Folder Include="QueryHandler\Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Products.Model\Products.Model.csproj" />
+    <ProjectReference Include="..\Products.DAL\Products.DAL.csproj" />
+  </ItemGroup>
+</Project>

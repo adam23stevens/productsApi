@@ -7,6 +7,7 @@ using RouteAttribute = Microsoft.AspNetCore.Components.RouteAttribute;
 
 namespace Products.Api.Controllers
 {
+	[Authorize]
 	[Route("api/[controller]/[action]")]
 	public class ProductController : BaseApiController
 	{
@@ -14,13 +15,13 @@ namespace Products.Api.Controllers
 		{
 		}
 
+		[AllowAnonymous]
 		[HttpGet("Test")]
 		public IActionResult Test()
 		{
 			return Ok();
 		}
 
-		[Authorize]
 		[HttpGet("All")]
 		public async Task<IActionResult> AllProducts()
 		{
@@ -36,7 +37,6 @@ namespace Products.Api.Controllers
 			}
 		}
 
-		[Authorize]
 		[HttpGet("ByColour/{colour}")]
 		public async Task<IActionResult> AllProductsByColour(string colour)
 		{
